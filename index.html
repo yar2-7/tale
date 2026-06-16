@@ -15,7 +15,17 @@
     </style>
 </head>
 <body>
-    <h1>📖 Моя сказка</h1>
-    <p>Жили-были...</p>
+    <h1>📖 Байки</h1>
+    <!-- Весь текст из README.md будет показан здесь -->
+    <div id="content"></div>
+    
+    <script>
+        // Загружаем содержимое README.md
+        fetch('README.md')
+            .then(response => response.text())
+            .then(text => {
+                document.getElementById('content').innerHTML = text;
+            });
+    </script>
 </body>
 </html>
